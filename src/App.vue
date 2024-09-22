@@ -5,12 +5,13 @@
 
 <script setup lang="ts">
 import { ref, onMounted } from 'vue'
+import axios from 'axios'
+
 import PlayersList from '@/components/Players/PlayersList.component.vue'
 import { FETCHING_ALL_PLAYERS } from './api'
-import axios from 'axios'
-import { stringToDateFormatter, sortedInDescdingOrder } from './helpers/stringToDate'
+import type { PlayerType } from './types'
 
-// true if the arrow point down (DESC)
+// true if the arrow point down (in decending order)
 const showArrowUp = ref(true)
 
 // fetching data from backend
@@ -25,13 +26,12 @@ const toggleArrow = () => {
 const fetchPlayers = async () => {
   try {
     const response = await axios.get(FETCHING_ALL_PLAYERS)
-    console.log(response.data)
-    const formatedData = response.data.map((player) => ({
+    const formatedData = response.data.map((player: PlayerType) => ({
       ...player,
-      birthDate: stringToDateFormatter(player.birthDate)
+      birthDate: player.birthDate
     }))
 
-    players.value = sortedInDescdingOrder(formatedData)
+    players.value = formatedData
   } catch (error) {
     console.error('Error fetching players:', error)
   }

@@ -1,7 +1,6 @@
-export type player = {
-  id: number
-  first_name: string
-  last_name: string
+export type PlayerType = {
+  firstName: string
+  lastName: string
   city: string
-  birth_date: string
+  birthDate: string
 }

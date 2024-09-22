@@ -1,0 +1,52 @@
+.grid-container {
+  display: grid;
+  min-width: 100%;
+  overflow-x: auto;
+  grid-template-columns: repeat(4, minmax(150px, 1fr));
+  width: 60rem;
+  border-radius: 10px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.grid-header {
+  background-color: #36304a;
+  font-family: 'Open Sans', sans-serif;
+  color: #fff;
+  padding: 16px 20px;
+  font-weight: bold;
+  font-size: 18px;
+  white-space: nowrap;
+}
+
+.icon-container {
+  padding: 0.3rem;
+  cursor: pointer;
+}
+
+.icon {
+  height: 18px;
+  width: 18px;
+}
+
+.grid-row {
+  display: contents;
+}
+
+.grid-row > div {
+}
+
+.grid-row.odd-row > div {
+  background-color: #fff;
+}
+
+.grid-row:hover > div {
+  background-color: #ddd;
+}
+
+.grid-cell {
+  font-size: 15px;
+  font-family: 'Open Sans', sans-serif;
+  padding: 12px 15px;
+  background-color: #f2f2f2;
+  color: black;
+}
