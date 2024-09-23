@@ -52,7 +52,7 @@ describe('App Component', () => {
 
     const playersListItems = wrapper.findAllComponents(PlayersListItem)
     console.log(playersListItems[0])
-    expect(playersListItems[0].text()).toContain('Alice') // First item should now be Jane after toggle
-    expect(playersListItems[1].text()).toContain('Noah') // Second should now be John
+    expect(playersListItems[0].text()).toContain('Alice') // First item should now be Alice after toggle
+    expect(playersListItems[1].text()).toContain('Noah') // Second should now be Noah
   })
 })
